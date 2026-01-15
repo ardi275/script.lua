@@ -16,7 +16,7 @@ local speedV2 = {
 
 -- Fungsi blatant
 local function blatantV1()
-    local ghostfinn = game.Plents.Player.Character:FindFirstChild("Ghostfinn")
+    local ghostfinn = game.Players.Player.Character:FindFirstChild("Ghostfinn")
     if ghostfinn then
         ghostfinn.Speed = speedV1.ghostfinn
     end
@@ -62,7 +62,7 @@ local function hideRodEffect()
 end
 
 local gui = Instance.new("ScreenGui")
-gui.Parent = game.Plents.Player.PlayerGui
+gui.Parent = game.Plents.Player.PlayersGui
 
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0.4, 0, 0.6, 0)
@@ -75,8 +75,8 @@ frame.Parent = gui
 local background = Instance.new("ImageLabel")
 background.Size = UDim2.new(1, 0, 1, 0)
 background.Position = UDim2.new(0, 0, 0, 0)
-background.Image = "rbxassetid:             
-background.BackgroundTransparency = 0.5
+background.Image = "rbxassetid: 181876652            
+background.Backgroundcolor3 = 0.5
 background.Parent = frame
 
 local button1 = Instance.new("TextButton")
