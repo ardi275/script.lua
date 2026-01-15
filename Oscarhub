@@ -1,0 +1,132 @@
+-- Blatant V1
+local speedV1 = {
+    ghostfinn = 118,
+    bamboo = 98,
+    lempar = 10, 
+    ikan = 5 
+}
+
+-- Blatant V2
+local speedV2 = {
+    element = 130,
+    diamond = 167,
+    lempar = 15, 
+    ikan = 10 
+}
+
+-- Fungsi blatant
+local function blatantV1()
+    local ghostfinn = game.Plents.Player.Character:FindFirstChild("Ghostfinn")
+    if ghostfinn then
+        ghostfinn.Speed = speedV1.ghostfinn
+    end
+    
+    local bamboo = game.Plents.Player.Character:FindFirstChild("Bamboo")
+    if bamboo then
+        bamboo.Speed = speedV1.bamboo
+    end
+    
+    game.Plents.Player.Character.Humanoid.WalkSpeed = speedV1.lempar
+    game.Plents.Player.Character.Humanoid.JumpPower = speedV1.ikan
+end
+
+local function blatantV2()
+    local element = game.Plents.Player.Character:FindFirstChild("Element")
+    if element then
+        element.Speed = speedV2.element
+    end
+    
+    local diamond = game.Plents.Player.Character:FindFirstChild("Diamond")
+    if diamond then
+        diamond.Speed = speedV2.diamond
+    end
+    
+    game.Plents.Player.Character.Humanoid.WalkSpeed = speedV2.lempar
+    game.Plents.Player.Character.Humanoid.JumpPower = speedV2.ikan
+end
+
+local function reduceMap()
+    game.Lighting.GlobalShadows = false
+    game.Lighting.FogEnd = 100
+    game.Lighting.FogStart = 0
+    game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
+    game.Lighting.Brightness = 1
+end
+
+local function hideRodEffect()
+    for _, v in pairs(game.Plents.Player.Character:GetChildren()) do
+        if v:IsA("MeshPart") then
+            v.Transparency = 1
+        end
+    end
+end
+
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Plents.Player.PlayerGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.4, 0, 0.6, 0)
+frame.Position = UDim2.new(0.3, 0, 0.2, 0)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 1
+frame.BorderColor3 = Color3.new(1, 1, 1)
+frame.Parent = gui
+
+local background = Instance.new("ImageLabel")
+background.Size = UDim2.new(1, 0, 1, 0)
+background.Position = UDim2.new(0, 0, 0, 0)
+background.Image = "rbxassetid:             
+background.BackgroundTransparency = 0.5
+background.Parent = frame
+
+local button1 = Instance.new("TextButton")
+button1.Size = UDim2.new(0.2, 0, 0.1, 0)
+button1.Position = UDim2.new(0.1, 0, 0.1, 0)
+button1.Text = "Blatant V1"
+button1.Parent = frame
+
+button1.MouseButton1Click:Connect(blatantV1)
+
+local button2 = Instance.new("TextButton")
+button2.Size = UDim2.new(0.2, 0, 0.1, 0)
+button2.Position = UDim2.new(0.1, 0, 0.2, 0)
+button2.Text = "Blatant V2"
+button2.Parent = frame
+
+button2.MouseButton1Click:Connect(blatantV2)
+
+local button3 = Instance.new("TextButton")
+button3.Size = UDim2.new(0.2, 0, 0.1, 0)
+button3.Position = UDim2.new(0.1, 0, 0.3, 0)
+button3.Text = "Reduce Map"
+button3.Parent = frame
+
+button3.MouseButton1Click:Connect(reduceMap)
+
+local button4 = Instance.new("TextButton")
+button4.Size = UDim2.new(0.2, 0, 0.1, 0)
+button4.Position = UDim2.new(0.1, 0, 0.4, 0)
+button4.Text = "Hide Rod Effect"
+button4.Parent = frame
+
+button4.MouseButton1Click:Connect(hideRodEffect)
+
+local button5 = Instance.new("TextButton")
+button5.Size = UDim2.new(0.1, 0, 0.1, 0)
+button5.Position = UDim2.new(0.9, 0, 0, 0)
+button5.Text = "X"
+button5.Parent = frame
+
+button5.MouseButton1Click:Connect(function()
+    gui.Enabled = false
+end)
+
+local openButton = Instance.new("TextButton")
+openButton.Size = UDim2.new(0.1, 0, 0.1, 0)
+openButton.Position = UDim2.new(0.8, 0, 0, 0)
+openButton.Text = "Open"
+openButton.Parent = game.Plents.Player.PlayerGui
+
+openButton.MouseButton1Click:Connect(function()
+    gui.Enabled = true
+end)
