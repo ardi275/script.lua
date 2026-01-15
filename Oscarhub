@@ -21,28 +21,28 @@ local function blatantV1()
         ghostfinn.Speed = speedV1.ghostfinn
     end
     
-    local bamboo = game.Plents.Player.Character:FindFirstChild("Bamboo")
+    local bamboo = game.Players.Player.Character:FindFirstChild("Bamboo")
     if bamboo then
         bamboo.Speed = speedV1.bamboo
     end
     
-    game.Plents.Player.Character.Humanoid.WalkSpeed = speedV1.lempar
-    game.Plents.Player.Character.Humanoid.JumpPower = speedV1.ikan
+    game.Players.Player.Character.Humanoid.WalkSpeed = speedV1.lempar
+    game.Players.Player.Character.Humanoid.JumpPower = speedV1.ikan
 end
 
 local function blatantV2()
-    local element = game.Plents.Player.Character:FindFirstChild("Element")
+    local element = game.Players.Player.Character:FindFirstChild("Element")
     if element then
         element.Speed = speedV2.element
     end
     
-    local diamond = game.Plents.Player.Character:FindFirstChild("Diamond")
+    local diamond = game.Players.Player.Character:FindFirstChild("Diamond")
     if diamond then
         diamond.Speed = speedV2.diamond
     end
     
-    game.Plents.Player.Character.Humanoid.WalkSpeed = speedV2.lempar
-    game.Plents.Player.Character.Humanoid.JumpPower = speedV2.ikan
+    game.Players.Player.Character.Humanoid.WalkSpeed = speedV2.lempar
+    game.Players.Player.Character.Humanoid.JumpPower = speedV2.ikan
 end
 
 local function reduceMap()
